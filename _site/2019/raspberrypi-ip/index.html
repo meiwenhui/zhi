@@ -1,0 +1,50 @@
+<h3 id="启用ssh">启用SSH</h3>
+<p>在sd卡中新建一个名为ssh的文件即可</p>
+
+<h3 id="设置wifi">设置WIFI</h3>
+<p>https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md</p>
+
+<p>编辑如下文件
+/etc/wpa_supplicant/wpa_supplicant.conf</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=CN
+
+network={
+    ssid="WIFINAME"
+    psk="wifipassword"
+}
+</code></pre></div></div>
+
+<h3 id="设置树莓派3-b的静态ip">设置树莓派3 B+的静态IP</h3>
+<p>修改/etc/dhcpcd.conf 文件</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vim /etc/dhcpcd.conf
+# 使用 vi 编辑文件，增加下列配置项
+
+# 指定接口 eth0
+interface eth0
+# 指定静态IP，/24表示子网掩码为 255.255.255.0
+static ip_address=192.168.1.20/24
+# 路由器/网关IP地址
+static routers=192.168.1.1
+# 手动自定义DNS服务器
+static domain_name_servers=114.114.114.114
+
+interface wlan0
+
+static ip_address=192.168.0.200/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+
+</code></pre></div></div>
+
+<p>修改完成后，按esc键后输入 :wq 保存。重启树莓派就生效了
+<code class="highlighter-rouge">sudo reboot</code></p>
+
+<p>上面的配置文件中 , eth0是有线的配置  , wlan0是无线配置</p>
+
+<p>ip_address就是静态IP , 后面要接/24</p>
+
+<p>routers是网关</p>
+
+<p>static domain_name_servers是DNS</p>
