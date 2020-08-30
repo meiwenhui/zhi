@@ -1,0 +1,34 @@
+title: "志"
+title2: "士+心=志"
+description: " ->"
+keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
+url: https://blog.meiwenhui.com # site url
+baseurl: "" # apply repo name if use it under gh-pages branch
+# baseurl: null # apply null if repo name is something like username.github.io
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
+
+source: ./
+destination: ./_site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : "me"
+
+plugins_dir:
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]

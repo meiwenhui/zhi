@@ -1,0 +1,41 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+@import "main";
+
+.container{
+max-width: 650px;
+font-size: 16px;
+}
+.post-item .article-title a{
+    font-size: 1.3rem;
+    margin: .5rem 0;
+	color:#2a408e;
+}
+.page-header {
+    padding: 5rem 6rem;
+}
+.page-header {
+    color: 
+#fff;
+text-align: center;
+margin-top: 0px;
+background-color:
+    #B0BEC5;
+}
+.page-header {
+    background: url("https://api.dujin.org/bing/1920.php") no-repeat center;
+        background-color: rgba(0, 0, 0, 0);
+        background-size: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+    margin: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
